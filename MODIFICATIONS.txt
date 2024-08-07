@@ -1,0 +1,4 @@
+Modifications that were made:
+    1. Added epayment/validator.py file to validate form data modularly
+    2. Added new endpoint('/payment/islamic-bank', views.store)
+    3. Added new method to model InquiryLog in epayment/models/transactions_log.py

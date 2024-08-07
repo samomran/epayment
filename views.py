@@ -760,13 +760,6 @@ class EPayment(FlexFieldsModelViewSet):
             return Response(get_body_response(None,  e.__str__(),400),status=status.HTTP_200_OK)
             return Response({"data": [{"message": e.__str__()}], "status_code": 400}, status=status.HTTP_200_OK)
 
-
-    def logging(self, log : InquiryLog, status_code : str, message : str, response_status : str) -> None:
-        log.status_code = status_code
-        log.message = message
-        log.response_status = response_status
-        log.save()
-
     @list_route(methods=['POST'], url_path="payment/islamic-bank", permission_classes=[], authentication_classes=[])
     def store(self, request):
 
